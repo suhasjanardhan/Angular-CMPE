@@ -7,33 +7,33 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css']
 })
-export class LoginComponent implements OnInit {
+export class AdminComponent implements OnInit {
+  
 
   constructor(private http: Http) { }
   private username;
 	private password;
-	arr=[];
-	status="";
-	login():void{
-		
-   this.getRec({"data":{"username":this.username,"password": this.password 
-   }}).subscribe(data =>{
+  arr=[];
+  status="";
+  
+  login():void{
+    if(this.username == "admin" && this.password == "admin") {
+      this.getRec({"data":{"username":this.username,"password": this.password 
+      }}).subscribe(data =>{
 		 this.status=data.message;
 		 console.log("status",data.message)
-		 if(this.status == "true"){
-			window.location.href='http://localhost:4200/main';
-		}
+		 
     });
-		
 
-	
-	}
+    }
+    
+  }
 
-	getRec(body: Object):Observable<any>{
+  getRec(body: Object):Observable<any>{
 		console.log("in api to get locations")
 				// ...using get request
 	
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
 				
 					let options       = new RequestOptions({ headers: headers }); // Create a request option
 	
-				return this.http.post('http://localhost:3001/login',body,options)//.then(console.log("repsonse",res))
+				return this.http.post('http://localhost:3001/admin',body,options)//.then(console.log("repsonse",res))
 											 // ...and calling .json() on the response to return data
 												.map((res:Response) => {
 													console.log("repsonse",res.json())
@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
 												.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 		
 		}
+
 
   ngOnInit() {
   }
