@@ -16,6 +16,8 @@ import { HomeMainComponent } from './home-main/home-main.component';
 import { DetailsComponent } from './details/details.component';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import { AdminComponent } from './admin/admin.component';
+import { UserlistComponent } from './userlist/userlist.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AnalyticsComponent } from './analytics/analytics.component';
     SignupComponent,
     HomeMainComponent,
     DetailsComponent,
-    AnalyticsComponent
+    AnalyticsComponent,
+    AdminComponent,
+    UserlistComponent
   ],
   imports: [
     // ModalModule.forRoot(),

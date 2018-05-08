@@ -25,14 +25,38 @@ export class AnalyticsComponent implements OnInit {
   }
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
-    responsive: true
+    responsive: true,
+
   };
-  public barChartLabels:string[] = ['Register', 'Login', 'Home', 'Search', 'Admin', 'Dashboard', 'cancel'];
+  public barChartLabels:string[] = ['Register', 'Login', 'Home', 'Search', 'Admin', 'Dashboard'];
   public barChartType:string = 'bar';
   public barChartLegend:boolean = true;
- 
+  public barcolors:any[] = [
+    'rgba(255, 99, 132, 0.2)',
+    'rgba(54, 162, 235, 0.2)',
+    'rgba(255, 206, 86, 0.2)',
+    'rgba(75, 192, 192, 0.2)',
+    'rgba(153, 102, 255, 0.2)',
+    'rgba(255, 159, 64, 0.2)'
+];
   public barChartData:any[] = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'}
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Analytics',
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+  ],
+  borderColor: [
+      'rgba(255,99,132,1)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)'
+  ]}
   ];
  
   // events
@@ -58,6 +82,14 @@ export class AnalyticsComponent implements OnInit {
     clone[0].data = data;
     this.barChartData = clone;
   }
+//   public barChartData:any[] = [
+//     {data: [65, 59, 80, 81, 56, 55, 40], label: 'Analytics',
+// }
+//   ];
+  // public lineChartData:Array<any> = [
+  //   {data0: [65, 59, 80, 81, 56, 55, 40], Label: 'Analytics'},
+  //   {data1: [28, 48, 40, 19, 86, 27, 90], label1: 'Analytics'}]
+
 
   public lineChartData:Array<any> = [
     [65, 59, 80, 81, 56, 55, 40],

@@ -1,24 +1,12 @@
-<div style="background-color: black">
+<div >
 
 
 
-<div>
-  <div style="display: block">
-    <canvas baseChart
-            [datasets]="barChartData"
-            [labels]="barChartLabels"
-            [options]="barChartOptions"
-            [legend]="barChartLegend"
-            [chartType]="barChartType"
-            (chartHover)="chartHovered($event)"
-            (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <!-- <button (click)="randomize()">Update</button> -->
-</div>
+
 
 
 <div class="col-md-6">
- 
+    <h2 style="text-align: center;  color:#47cffc">User Metrics</h2>
   <canvas baseChart
               [data]="lineChartData"
               [labels]="lineChartLabels"
@@ -28,6 +16,7 @@
               (chartClick)="chartClicked($event)"></canvas>
 </div>
 <div class="col-md-6">
+    <h2 style="text-align: center;  color:#47cffc">Overview</h2>
   <canvas baseChart
               [data]="pieChartData"
               [labels]="pieChartLabels"
@@ -36,6 +25,24 @@
               (chartClick)="chartClicked($event)"></canvas>
 </div>
 <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
-  <button (click)="randomizeType()" style="display: inline-block">Toggle</button>
+     
+  <button  type="button" class="btn btn-info" (click)="randomizeType()" style="display: inline-block">Toggle</button>
 </div>
+
+
+<div>
+    <h2 style="text-align: center; color:#47cffc">Clicks per component</h2>
+    <div style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [colors]="barcolors"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <!-- <button (click)="randomize()">Update</button> -->
+  </div>
 </div>

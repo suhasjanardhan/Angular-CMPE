@@ -1,0 +1,54 @@
+
+<h2>Admin Dashboard <a href="http://localhost:4200/analytics" class="btn btn-primary btn-sm active" style="margin-left: 500px" role="button" float="right">View Dashboard</a></h2>
+<!-- <div class="col-md-2" style="float: right;" >
+    <a href="http://localhost:4200/analytics" class="btn btn-primary btn-sm active" role="button">View Dashboard</a>
+     <button type="button" class="btn btn-info" >Info</button> 
+</div> -->
+
+<div class="row" style="border:solid; background-color:black;    margin-left: -200px;width: 1550px ">
+          <div class="col-sm-3" style="color:orange; text-align: center">
+          <h4>Name</h4> 
+          </div>
+
+          <div class="col-sm-3" style="color:orange">
+          <h4>Username</h4>   
+          </div>
+
+          <div class="col-sm-2" style="color:orange">
+            <h4>Email</h4>
+          </div>
+
+
+
+          <div class="col-sm-2" style="color:orange">
+            <h4>Phone</h4>
+          </div>
+  
+</div>
+
+
+<div class="container" *ngFor="let b of status"  style="margin-left: -185px; width: 1506px; ">
+  
+    <div class="row" style="border-width:0.2px; border:solid white; margin-top: 10px">
+          
+        <div class="col-sm-3" style="margin-top: 10px;text-align: center"  >
+  {{b.name}}
+          </div>
+          <div class="col-sm-3" style="margin-top: 10px;"  >
+              {{b.username}}
+            </div>
+
+
+            <div class="col-sm-2" style="margin-top: 10px;"  >
+                {{b.email}}
+              </div>
+ 
+                <div class="col-sm-2" style="margin-top: 10px;"  >
+                    {{b.phone}}
+                  </div>
+  </div>
+  
+  
+  
+  
+  </div>

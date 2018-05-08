@@ -69,23 +69,10 @@
               </div>
           </div>
       </div>
-      <div class="form-group">
-          <label for="conpassword" class="col-sm-3 control-label">Confirm Password</label>
-          <div class="col-sm-9">
-            <input type="password" class="form-control" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}" id="conpassword" required validateEqual="password" name="conpassword" placeholder="Confirm Password" [(ngModel)]="conpassword" #ucpasswd="ngModel">
-            <div *ngIf="ucpasswd.errors && (ucpasswd.dirty)" class="alert alert-danger">
-                <div [hidden]="!ucpasswd.errors.pattern">
-                  Password must be atleast 8 characters, at least one uppercase, one lowercase, one number and one special character!
-                </div>
-                <div [hidden]="!ucpasswd.errors.required">
-                    Re-type the password!
-                  </div>
-              </div>
-          </div>
-      </div>
+      
 	  <div class="form-group">
 	  	<div class="col-sm-offset-3 col-sm-10">
-	      <button type="submit" class="btn btn-primary">Sign Up</button>
+	      <button type="submit" class="btn btn-primary" (click)="signup()">Sign Up</button>
 	    </div>
 	  </div>
 	</form>
