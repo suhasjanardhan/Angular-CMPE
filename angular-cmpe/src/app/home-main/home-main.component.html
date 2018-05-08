@@ -1,0 +1,71 @@
+<div class="backimg" style="background-image: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_large_assets/ad9f16b7b26d/assets/img/home/hero_photos/-j5Gbjs3j_MEN4bwf9Mf_w.jpg)">
+ 
+  
+     
+  <form class="form-horizontal" #loginForm="ngForm">
+     <div  class="form-group">
+        <input type="text" name="search" class="form-control"  [(ngModel)]="search" placeholder="starbucks..." style="margin-left:500px; position:relative; top:220px; width:400px">
+     </div>
+     
+     
+     <div class="form-group">
+    <div  >
+        <button type="submit" class="btn btn-primary"  (click)="getapi()" style="    margin-left: 899px;
+        margin-top: 171px;float:left;">Search</button>
+      </div>
+      </div>
+
+
+  </form>
+</div>
+
+<div class="row" style="border:solid; background-color:black;    margin-left: -183px;
+width: 1506px ">
+    <div class="col-md-4" style="color:orange">
+      Image
+      </div>
+    <div class="col-sm-7" style="color:orange">
+        Details
+      
+      </div>
+   
+
+</div>
+
+
+<div class="container" *ngFor="let b of arr"  style=" background-color:black;    margin-left: -183px;
+width: 1506px; padding-top:10px;">
+  
+  <div class="row" style="border-width:0.2px; border:thin white;">
+      <div class="col-md-4">
+        <img class="image" src={{b.image_url}}  alt="">
+        </div>
+      <div class="col-sm-7" >
+          <div class="row" style="color:lightskyblue">
+        <h2>
+            {{b.name}}
+        </h2>  
+      </div>
+        <div class="row" style="color: silver">
+           <h5>{{b.location.address1}}</h5> 
+
+        </div>
+                <div class="row" style="color: silver">
+
+               <h5>{{b.categories[0].title}} </h5>     
+        </div>
+        <div class="row" style="color: orange">
+
+          <h5>  {{b.price}}</h5> 
+          </div>
+        
+        </div>
+     
+
+</div>
+</div>
+
+
+
+
+

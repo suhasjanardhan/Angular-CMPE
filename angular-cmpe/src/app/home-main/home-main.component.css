@@ -1,0 +1,24 @@
+.container{
+    width:100%;
+    background-color: #222
+  }
+  .image{
+    border: solid;
+    border-width: 0.5px;
+    margin-left: 100px; 
+    float:left;
+    width:63.33%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    
+  }
+
+  .backimg{
+    
+    background-size: cover;
+height: 400px;
+width: 1700px;
+background-repeat:no-repeat;
+background-position: center;
+margin-left:-220px;
+  }

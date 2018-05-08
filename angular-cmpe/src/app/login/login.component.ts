@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
 	login():void{
 		if(this.username == "test" && this.password == "test"){
 			alert("succesfully logged in");
+			//var href = 'http://localhost:4200/main'
+			window.location.href= 'http://localhost:4200/main';
 		}
 		else {
 			alert("Wrong username anad password");
