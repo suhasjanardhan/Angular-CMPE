@@ -47,7 +47,9 @@
             <input type="text" class="form-control" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$" id="phone" required name="phone" placeholder="Phone" [(ngModel)]="phone" #uphone="ngModel">
             <div *ngIf="uphone.errors && (uphone.dirty)" class="alert alert-danger">
                 <div [hidden]="!uphone.errors.pattern">
-                  Please enter a valid phone number!
+                  Please enter phone number in below format:<br>
+                  123-123-1234<br>                  
+                  (123)123-1234
                 </div>
                 <div [hidden]="!uphone.errors.required">
                     Phone number is required!
