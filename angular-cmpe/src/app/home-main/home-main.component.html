@@ -21,48 +21,94 @@
 
 <div class="row" style="border:solid; background-color:black;    margin-left: -183px;
 width: 1506px ">
-    <div class="col-md-4" style="color:orange">
-      Image
+    <div class="col-md-4" style="color:orange; text-align: center">
+     <h4>Image</h4> 
       </div>
-    <div class="col-sm-7" style="color:orange">
-        Details
+    <div class="col-sm-4" style="color:orange">
+     <h4>Details</h4>   
       
+      </div>
+
+      <div class="col-sm-1" style="color:orange">
+        <h4>Price</h4>
+      </div>
+      <div class="col-sm-1" style="color:orange">
+        <h4>Rating</h4>
+      </div>
+      <div class="col-sm-1" style="color:orange">
+        <h4>Open Now</h4>
       </div>
    
 
 </div>
 
 
-<div class="container" *ngFor="let b of arr"  style=" background-color:black;    margin-left: -183px;
-width: 1506px; padding-top:10px;">
+<div class="container" *ngFor="let b of arr"  style=" background-color:black; margin-left: -183px; width: 1506px; ">
   
-  <div class="row" style="border-width:0.2px; border:thin white;">
+  <div class="row" style="border-width:0.2px; border:solid white; margin-top: 10px">
       <div class="col-md-4">
         <img class="image" src={{b.image_url}}  alt="">
         </div>
-      <div class="col-sm-7" >
+
+
+
+      <div class="col-sm-4" >
           <div class="row" style="color:lightskyblue">
         <h2>
             {{b.name}}
         </h2>  
       </div>
+
+
         <div class="row" style="color: silver">
            <h5>{{b.location.address1}}</h5> 
 
         </div>
+
+
                 <div class="row" style="color: silver">
 
                <h5>{{b.categories[0].title}} </h5>     
+               </div>
+
+
+                <div class="row" style="color: silver">
+
+                  <h5 style="float: left;">{{b.phone}} </h5>     
+                </div>
+
+
+              <div class="row" style="color: silver">
+
+                <h5>{{b.distance}} meters </h5>     
+                </div>
+
+
+
+
+        
         </div>
-        <div class="row" style="color: orange">
+        <div class="col-sm-1" style="color: orange;margin-top: 10px" >
 
           <h5>  {{b.price}}</h5> 
           </div>
-        
-        </div>
-     
+        <div class="col-sm-1" style="margin-top: 10px; color:silver"  >
 
+          {{b.rating}} Rating
+        </div>
+        <div class="col-sm-1" style="margin-top: 10px;color:silver"  >
+
+          {{b.is_closed}}
+        </div>
+        <div class="col-sm-1" style="margin-top: 80px" >
+          <a href={{b.url}} class="btn btn-primary btn-sm active" role="button">View Business</a>
+          <!-- <button type="button" class="btn btn-info" >Info</button> -->
+        </div>
 </div>
+
+
+
+
 </div>
 
 

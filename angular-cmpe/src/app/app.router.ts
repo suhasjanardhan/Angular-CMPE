@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component'; 
 import { HomeMainComponent } from './home-main/home-main.component'; 
-
+import { AnalyticsComponent } from './analytics/analytics.component'; 
 
 export const router: Routes = [ 
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,6 +15,7 @@ export const router: Routes = [
 	{ path: 'about', component: AboutComponent },    
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
-    { path: 'main', component: HomeMainComponent }  
+    { path: 'main', component: HomeMainComponent } ,
+    { path: 'analytics', component: AnalyticsComponent } 
 ]; 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);

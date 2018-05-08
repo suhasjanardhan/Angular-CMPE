@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Injectable }     from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
+import { DetailsComponent } from './../details/details.component';
+// import { BsModalService, ModalDirective } from 'ngx-bootstrap/modal';
 
-// Import RxJs required methods
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -11,6 +13,7 @@ import 'rxjs/add/operator/catch';
 
 @Component({
   selector: 'app-home-main',
+  //directives: [DetailsComponent],
   templateUrl: './home-main.component.html',
   styleUrls: ['./home-main.component.css']
 })
@@ -20,6 +23,7 @@ export class HomeMainComponent implements OnInit {
 
   constructor(private http: Http) { }
   arr = [];
+  status;
   search;
   private commentsUrl = 'http://localhost:3001/fake'; 
   ngOnInit() {
@@ -30,9 +34,14 @@ getapi(){
   console.log("search",this.search)
    this.getRec({"data":{"term":this.search,"location": 'san jose, ca' 
    }}).subscribe(data =>{
+     
+     
      console.log("data",data.jsonBody.businesses)
      this.arr = data.jsonBody.businesses
     });
+
+
+
 }
 
   getComments():Observable<any>{
@@ -44,13 +53,7 @@ console.log("in comments")
                       var temp = res.json()
                       console.log("",temp._body)
                     }) 
-                      // .then(response => {
-                      //   // console.log(payload)
-                      //     console.log(response);
-                      //     this.setState({
-                      //       data: response.jsonBody.businesses
-                      //     })
-                    //...errors if any
+            
                     .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 
 }
@@ -80,6 +83,43 @@ getRec(body: Object):Observable<any>{
                       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   
   }
+
+
+
+
+  // onClick() {
+  //   const dialogRef = this.modal.alert()
+  //       .size('lg')
+  //       .showClose(true)
+  //       .title('A simple Alert style modal window')
+  //       .body(`
+  //           <h4>Alert is a classic (title/body/footer) 1 button modal window that 
+  //           does not block.</h4>
+  //           <b>Configuration:</b>
+  //           <ul>
+  //               <li>Non blocking (click anywhere outside to dismiss)</li>
+  //               <li>Size large</li>
+  //               <li>Dismissed with default keyboard key (ESC)</li>
+  //               <li>Close wth button click</li>
+  //               <li>HTML content</li>
+  //           </ul>`)
+  //       .open();
+
+  //   dialogRef.result
+  //       .then( result => alert(`The result is: ${result}`) );
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
